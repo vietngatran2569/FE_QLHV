@@ -1,0 +1,34 @@
+<form [formGroup]="syllabusForm" (ngSubmit)="onSubmit()">
+  <div class="form-group row">
+    <label for="syllabus-name">Name</label>
+    <input type="text" formControlName="name" class="form-control" id="syllabus-name">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="syllabusForm.get('name').invalid && syllabusForm.get('name').touched">
+      Name is required!
+    </div>
+  </div>
+  <div class="form-group row" hidden>
+    <div class="col-3">
+      <input (click)="uploadImage()" formControlName="image" type="button">
+    </div>
+    <div class="col-9">
+      <input type="file" (change)="onFileChanged($event)">
+      <img [src]="imgURL" height="300" *ngIf="imgURL" alt="">
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="syllabusForm.get('image').invalid && syllabusForm.get('image').touched">
+      Image is required!
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="syllabus-description">Descriptions</label>
+    <input type="text" formControlName="description" class="form-control" id="syllabus-description">
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="syllabusForm.get('description').invalid && syllabusForm.get('description').touched">
+    Descriptions is required!
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

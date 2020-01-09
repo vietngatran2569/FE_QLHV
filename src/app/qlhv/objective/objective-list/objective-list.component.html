@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row col-md-12 col-md-offset-2 custyle text-center">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>List Objective</th>
+        <th class="text-center">Coporation</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let objectivee of objective">
+        <td>{{objectivee.name}}</td>
+        <td class="text-center">
+          <a class="btn btn-light" (click)="goToEdit(objectivee)" >Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteObjective(objectivee.id)">Delete<em class="fa fa-trash"></em></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

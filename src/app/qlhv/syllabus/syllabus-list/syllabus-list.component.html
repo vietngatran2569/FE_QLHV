@@ -1,0 +1,6 @@
+<div class="row">
+  <div class="col-4" *ngFor="let item of syllabusList" style="padding-top: 10px">
+    <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>
+  </div>
+</div>
+
