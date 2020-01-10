@@ -1,6 +1,6 @@
 import {Objective} from './objective';
 
-export class Syllabus {
+export interface Syllabus {
   id: number;
   name: string;
   image: string;
