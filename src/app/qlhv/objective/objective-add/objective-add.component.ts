@@ -37,12 +37,18 @@ export class ObjectiveAddComponent implements OnInit {
   }
 
   onSubmit() {
-    this.objectiveService.addObjective(this.objectiveForm.value).subscribe(result => {
+    const objective: Objective = {
+      id: this.objectiveForm.value.id,
+      name: this.objectiveForm.value.name,
+      syllabus: {
+        id: this.objectiveForm.value.syllabus
+      }
+    }
+    console.log(this.objectiveForm.value);
+    this.objectiveService.addObjective(objective).subscribe(result => {
       this.isSuccess = true;
     }, error => {
       this.isSuccess = false;
     });
   }
-
-
 }
