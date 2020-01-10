@@ -4,14 +4,16 @@
       <thead>
       <tr>
         <th>List Objective</th>
+        <th>Type Syllasbus</th>
         <th class="text-center">Coporation</th>
       </tr>
       </thead>
-      <tr *ngFor="let objectivee of objective">
+      <tr *ngFor="let objectivee of objective ">
         <td>{{objectivee.name}}</td>
         <td class="text-center">
-          <a class="btn btn-light" (click)="goToEdit(objectivee)" >Edit<em class="fa fa-pencil"></em></a>
-          <button class="btn btn-danger" (click)="submitDeleteObjective(objectivee.id)">Delete<em class="fa fa-trash"></em></button>
+          <a class="btn btn-light" (click)="goToEdit(objectivee)">Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteObjective(objectivee.id)">Delete<em
+            class="fa fa-trash"></em></button>
         </td>
       </tr>
     </table>
