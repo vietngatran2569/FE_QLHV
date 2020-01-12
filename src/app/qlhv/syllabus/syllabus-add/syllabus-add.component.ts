@@ -4,6 +4,7 @@ import {Syllabus} from '../../../interface/syllabus';
 import {HttpClient} from '@angular/common/http';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
 import {UploadImageService} from '../../../services/upload-image/upload-image.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-syllabus-add',
@@ -21,7 +22,8 @@ export class SyllabusAddComponent implements OnInit {
 
   constructor(private syllabusService: SyllabusService,
               private httpClient: HttpClient,
-              private uploadImageService: UploadImageService) {
+              private uploadImageService: UploadImageService,
+              private router: Router) {
   }
 
   syllabusForm: FormGroup = new FormGroup({
@@ -38,6 +40,7 @@ export class SyllabusAddComponent implements OnInit {
     this.addSyllabus.emit(syllabus);
     this.syllabusService.addSyllabus(syllabus).subscribe(result => {
       alert('da them thanh cong!');
+      this.router.navigateByUrl('/list-syllabus');
     });
   }
 

@@ -40,4 +40,7 @@ export class SyllabusListComponent implements OnInit {
     this.router.navigateByUrl('/edit-syllabus');
   }
 
+  getCreateForm() {
+    this.router.navigateByUrl('/add-syllabus');
+  }
 }
