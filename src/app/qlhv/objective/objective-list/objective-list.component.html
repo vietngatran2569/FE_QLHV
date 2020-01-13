@@ -1,18 +1,21 @@
+<button type="button" class="btn btn-info" (click)="getCreateObjectiveForm()">Create new Objective</button><br><br>
+
 <div class="container-fluid">
-  <div class="row col-md-12 col-md-offset-2 custyle text-center">
-    <table class="table table-striped custab">
+  <div class="row col-md-12 col-md-offset-2 text-center">
+    <table class="table table-striped">
       <thead>
       <tr>
         <th>List Objective</th>
-        <th>Type Syllasbus</th>
-        <th class="text-center">Coporation</th>
+<!--        <th>Type Syllabus</th>-->
+        <th class="text-center"></th>
       </tr>
       </thead>
-      <tr *ngFor="let objectivee of objective ">
-        <td>{{objectivee.name}}</td>
+      <tr *ngFor="let objective of objectives ">
+        <td>{{objective.name}}</td>
+<!--        <td>{{objective.syllabus_id}}</td>-->
         <td class="text-center">
-          <a class="btn btn-light" (click)="goToEdit(objectivee)">Edit<em class="fa fa-pencil"></em></a>
-          <button class="btn btn-danger" (click)="submitDeleteObjective(objectivee.id)">Delete<em
+          <a class="btn btn-light" (click)="goToEdit(objective)">Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteObjective(objective.id)">Delete<em
             class="fa fa-trash"></em></button>
         </td>
       </tr>

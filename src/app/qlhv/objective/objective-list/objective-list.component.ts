@@ -13,9 +13,10 @@ import {SyllabusService} from '../../../services/syllabus/syllabus.service';
 })
 export class ObjectiveListComponent implements OnInit {
 
-  objective: Objective[] = [];
+  objectives: Objective[] = [];
   p = 1;
   count = 3;
+  private syllabus: Syllabus;
 
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
@@ -25,7 +26,7 @@ export class ObjectiveListComponent implements OnInit {
 
   ngOnInit() {
     this.objectiveService.getList().subscribe(result => {
-      this.objective = result;
+      this.objectives = result;
       console.log('success');
     }, error => {
       console.log('error');
@@ -40,7 +41,6 @@ export class ObjectiveListComponent implements OnInit {
 
   deleteCategory(id: number) {
     this.objectiveService.deleteObjective(id).subscribe(result => {
-      this.ngOnInit();
       console.log('success');
     }, error => {
       console.log('error');
@@ -52,5 +52,13 @@ export class ObjectiveListComponent implements OnInit {
     this.router.navigateByUrl('/edit-objective');
   }
 
+  getSyllabusName(id: number){
+    this.objectiveService.getSyllabus(id).subscribe(data =>{
+      this.syllabus = data;
+    });
+  }
 
+  getCreateObjectiveForm() {
+    this.router.navigateByUrl("/add-objective");
+  }
 }

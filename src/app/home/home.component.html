@@ -1,10 +1,23 @@
-
+<div class="text-info" style="font-size: 2rem;">
+  <div>
+    <a href="/list-syllabus">Syllabuses</a>
+  </div>
+  <div>
+    <a href="/list-objective">Objectives</a>
+  </div>
+  <div>
+    <a href="/list-skill">Skills</a>
+  </div>
+  <div>
+    <a href="/list-activity">Activities</a>
+  </div>
+</div>
 <div *ngIf="info.token; else loggedOut">
   <h5 class="text-primary">Your Information</h5>
   <p>
     <strong>Username:</strong> {{info.username}}<br/>
-    <strong>Roles:</strong> {{info.authorities}}<br />
-    <strong>Token:</strong> {{info.token}}.
+    <strong>Roles:</strong> {{info.authorities}}<br/>
+<!--    <strong>Token:</strong> {{info.token}}-->
   </p>
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>

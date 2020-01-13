@@ -1,11 +1,11 @@
 <div class="card w3-center" style="width: 18rem; height: 320px">
   <div class="card-body">
-    <a href="{{syllabus.name}}" class="card-title">{{syllabus.name}}</a>
+    <a href="/list-objective" class="card-title">{{syllabus.name}}</a>
     <br/>
     <img style="width: 50%" class="card-title" src="{{syllabus.image}}"/>
     <p class="card-text">{{syllabus.description}}</p>
-    <button (click)="editProduct()" class="btn btn-secondary" style="margin-right: 5px">Sua</button>
-    <button (click)="deleteProduct()" class="btn btn-secondary">Xoa</button>
+    <button (click)="editProduct()" class="btn btn-secondary" style="margin-right: 5px">Edit</button>
+    <button (click)="deleteProduct()" class="btn btn-secondary">Delete</button>
   </div>
 </div>
 

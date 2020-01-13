@@ -43,4 +43,8 @@ export class SkillListComponent implements OnInit {
     this.skillService.setData(item);
     this.router.navigateByUrl('/edit-skill');
   }
+
+  getCreateForm() {
+    this.router.navigateByUrl("/add-skill");
+  }
 }

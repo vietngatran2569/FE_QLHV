@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.router.navigateByUrl('/syllabus');
+        this.router.navigateByUrl('/list-syllabus');
       },
       error => {
         console.log(error);
