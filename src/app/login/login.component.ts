@@ -49,7 +49,8 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log(error);
-        this.errorMessage = error.error.message;
+        this.errorMessage = '\n' +
+          'The account information is incorrect or already exists';
         this.isLoginFailed = true;
       }
     );
