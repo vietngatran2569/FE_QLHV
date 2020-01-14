@@ -1,1 +1,22 @@
-<p>activity-list works!</p>
+<div class="container-fluid">
+  <div class="row col-md-12 col-md-offset-2 custyle text-center">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>List Activity</th>
+        <th>Type Skill</th>
+        <th class="text-center">Operation</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let activiti of activity ">
+        <td>{{activiti.name}}</td>
+
+        <td class="text-center">
+          <a class="btn btn-light" (click)="goToEdit(activiti)">Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteActivity(activiti.id)">Delete<em
+            class="fa fa-trash"></em></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

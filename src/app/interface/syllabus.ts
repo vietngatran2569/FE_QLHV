@@ -5,5 +5,5 @@ export interface Syllabus {
   name: string;
   image: string;
   description: string;
-  objective: Objective[];
+  objectiveList: Objective[];
 }

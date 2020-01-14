@@ -5,8 +5,8 @@
       <div class="col-sm-6" style="">
         <form name="form" [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <h3>New objective</h3>
-            <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên objective mới"/>
+            <h3>New objectives</h3>
+            <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên objectives mới"/>
             <div class="alert alert-danger" role="alert"
                  *ngIf="objectiveForm.get('name').invalid && objectiveForm.get('name').touched">
               Name không thể để trống

@@ -1,16 +1,19 @@
+<button type="button" class="btn btn-info" (click)="getCreateForm()">Create new Skill</button><br><br>
+
 <div class="container-fluid">
   <div class="row col-md-12 col-md-offset-2 custyle text-center">
     <table class="table table-striped custab">
       <thead>
       <tr>
         <th>List Skill</th>
-        <th class="text-center">Coporation</th>
+        <th class="text-center">Operations</th>
       </tr>
       </thead>
       <tr *ngFor="let skill2 of skill">
         <td>{{skill2.name}}</td>
         <td class="text-center">
-          <a class="btn btn-light" (click)="goToEdit(skill2)" >Edit<em class="fa fa-pencil"></em></a>
+          <a class="btn btn-info" (click)="goToEdit(skill2)" >Edit<em class="fa fa-pencil"></em></a>
+          &nbsp;
           <button class="btn btn-danger" (click)="submitDeleteSkill(skill2.id)">Delete<em class="fa fa-trash"></em></button>
         </td>
       </tr>
