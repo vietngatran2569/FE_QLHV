@@ -33,12 +33,12 @@ export class SyllabusService {
     return this.httpClient.get<Syllabus[]>(syllabusAPI);
   }
 
-  addSyllabus(product: Syllabus) {
-    return this.httpClient.post(syllabusAPI + '/create', product);
+  addSyllabus(formData: FormData) {
+    return this.httpClient.post(syllabusAPI + '/create', formData);
   }
 
-  editSyllabus(product: Syllabus) {
-    return this.httpClient.put(syllabusAPI + '/update', product);
+  editSyllabus(formData: FormData) {
+    return this.httpClient.put(syllabusAPI + '/update', formData);
   }
 
   deleteSyllabus(id: number) {

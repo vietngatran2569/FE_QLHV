@@ -45,7 +45,7 @@ export class ObjectiveAddComponent implements OnInit {
     // console.log(this.objectiveForm.value);
     this.objectiveService.addObjective(objective).subscribe(result => {
       this.isSuccess = true;
-      this.router.navigateByUrl('/list-objective');
+      this.router.navigateByUrl("/list-objective")
     }, error => {
       this.isSuccess = false;
     });

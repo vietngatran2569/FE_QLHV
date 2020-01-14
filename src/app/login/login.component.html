@@ -1,10 +1,4 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Yinka Enoch Adedokun">
-  <title>Login Page</title>
-</head>
-<body>
+
 <!-- Main Content -->
 <div class="container-fluid">
   <div class="row main-content bg-success text-center">
@@ -18,7 +12,7 @@
           <h2>Log In</h2>
         </div>
         <div class="row">
-           <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
             <div class="row form-group">
               <input type="text" name="username" id="username" class="form__input" placeholder="Username" [(ngModel)]="form.username" #username="ngModel"
                      required />
@@ -33,12 +27,12 @@
                 <div *ngIf="password.errors.required">Password is required</div>
               </div>
             </div>
-             <div class="form-group">
-               <button class="btn btn-primary">Login</button>
-               <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
-                 Login failed: {{errorMessage}}
-               </div>
-             </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Login</button>
+              <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+                Login failed: {{errorMessage}}
+              </div>
+            </div>
           </form>
         </div>
         <div class="row">
@@ -49,8 +43,6 @@
   </div>
 </div>
 <!-- Footer -->
-<div class="container-fluid text-center footer">
-  Coded with &hearts; by <a href="">b.i.g.b.a.n.g</a>
-</div>
 
-</body>
+
+

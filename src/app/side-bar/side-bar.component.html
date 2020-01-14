@@ -1,27 +1,3 @@
-<!--<nav class="navbar navbar-inverse">-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="navbar-header">-->
-<!--      <a class="navbar-brand" href="#">grokonez</a>-->
-<!--    </div>-->
-<!--    <ul class="nav navbar-nav" routerLinkActive="active">-->
-<!--      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>-->
-<!--      <li *ngIf="authority === 'user'" class="nav-item">-->
-<!--        <a class="nav-link" routerLink="user">User Board</a>-->
-<!--      </li>-->
-<!--      <li *ngIf="authority === 'admin'" class="nav-item">-->
-<!--        <a class="nav-link" routerLink="admin">Admin Board</a>-->
-<!--      </li>-->
-<!--      <li *ngIf="authority === 'pm'" class="nav-item">-->
-<!--        <a class="nav-link" routerLink="pm">PM Board</a>-->
-<!--      </li>-->
-<!--      <li *ngIf="!authority" class="nav-item">-->
-<!--        <a class="nav-link" routerLink="auth/login">Login</a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</nav>-->
-
-
 <nav class="w3-sidebar w3-bar-block dropdown w3-card w3-top w3-xlarge w3-animate-left"
      style="display:none;z-index:2;width:20%;min-width:50px" id="mySidebar">
   <a href="javascript:void(0)" (click)="w3_close()"
@@ -38,14 +14,14 @@
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Objective
       <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a routerLink="/list-objective" (click)="w3_close()" class="w3-bar-item w3-button">List Objective</a></li>
-      <li><a routerLink="/add-objective" (click)="w3_close()" class="w3-bar-item w3-button">New Objective</a></li>
+      <li><a routerLink="/list-objectives" (click)="w3_close()" class="w3-bar-item w3-button">List Objective</a></li>
+      <li><a routerLink="/add-objectives" (click)="w3_close()" class="w3-bar-item w3-button">New Objective</a></li>
     </ul>
   </div>
   <div class="dropdown" style="width:20%;min-width:83px">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Skill
       <span class="caret"></span></button>
-    <ul class="dropdown-menu" >
+    <ul class="dropdown-menu">
       <a routerLink="/list-skill" (click)="w3_close()" class="w3-bar-item w3-button">List Skill</a>
       <a routerLink="/add-skill" (click)="w3_close()" class="w3-bar-item w3-button">New Skill</a>
     </ul>
@@ -59,20 +35,3 @@
     </ul>
   </div>
 </nav>
-<!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" (click)="w3_open()" *ngIf="authority === 'pm' ">☰</div>
-    <div class="w3-right w3-padding-16" *ngIf="!authority">
-      <a class="nav-link" routerLink="auth/login">Login</a>
-    </div>
-    <div class="w3-right w3-padding-16" *ngIf="authority">
-      <a class="nav-link" routerLink="home">Infor</a>
-    </div>
-    <div class="w3-center w3-padding-16">My course</div>
-  </div>
-</div>
-<br><br><br><br><br>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>

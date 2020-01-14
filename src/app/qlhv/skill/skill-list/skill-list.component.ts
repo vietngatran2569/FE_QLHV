@@ -45,6 +45,6 @@ export class SkillListComponent implements OnInit {
   }
 
   getCreateForm() {
-    this.router.navigateByUrl('/add-skill');
+    this.router.navigateByUrl("/add-skill");
   }
 }
