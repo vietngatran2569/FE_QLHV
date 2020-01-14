@@ -1,29 +1,35 @@
 <form [formGroup]="syllabusForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group" hidden>
+    <label for="id">ID</label>
+    <input type="text" id="id" formControlName="id" [value]="syllabus.id">
+  </div>
+
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div class="alert alert-danger" role="alert" *ngIf="syllabusForm.get('name').invalid && syllabusForm.get('name').touched">
+    <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+           [value]="syllabus.name">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="syllabusForm.get('name').invalid && syllabusForm.get('name').touched">
       Name is required!
     </div>
   </div>
-  <div class="form-group row" hidden>
-    <div class="col-3">
-      <input (click)="uploadImage()" formControlName="image" type="button">
-    </div>
+
+  <div class="form-group row">
     <div class="col-9">
       <input type="file" (change)="onFileChanged($event)">
       <img [src]="imgURL" height="300" *ngIf="imgURL" alt="">
     </div>
-    <div class="alert alert-danger" role="alert"
-         *ngIf="syllabusForm.get('image').invalid && syllabusForm.get('image').touched">
-      Image is required!
-    </div>
   </div>
+
   <div class="form-group">
     <label for="exampleInputPassword2">Descriptions</label>
-    <input type="text" formControlName="description" class="form-control" id="exampleInputPassword2">
+    <input type="text" formControlName="description" class="form-control" id="exampleInputPassword2"
+           [value]="syllabus.description">
   </div>
-  <div class="alert alert-danger" role="alert" *ngIf="syllabusForm.get('description').invalid && syllabusForm.get('description').touched">
+
+  <div class="alert alert-danger" role="alert"
+       *ngIf="syllabusForm.get('description').invalid && syllabusForm.get('description').touched">
     Descriptions is required!
   </div>
 

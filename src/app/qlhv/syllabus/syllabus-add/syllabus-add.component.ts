@@ -16,8 +16,6 @@ export class SyllabusAddComponent implements OnInit {
   @Output() addSyllabus = new EventEmitter<Syllabus>();
   public selectedFile;
   imgURL: any;
-  base64Data: any;
-  convertedImage: any;
   @Output() receivedImageData: any;
 
   constructor(private syllabusService: SyllabusService,
@@ -28,7 +26,6 @@ export class SyllabusAddComponent implements OnInit {
 
   syllabusForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    image: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required, Validators.minLength(1)]),
   });
 
@@ -37,28 +34,16 @@ export class SyllabusAddComponent implements OnInit {
 
   onSubmit() {
     const syllabus = this.syllabusForm.value;
-    this.addSyllabus.emit(syllabus);
-    this.syllabusService.addSyllabus(syllabus).subscribe(result => {
+    const formData = new FormData();
+    formData.append("syllabusInfo", JSON.stringify(syllabus));
+    formData.append('image', this.selectedFile);
+    // this.addSyllabus.emit(syllabus);
+    this.syllabusService.addSyllabus(formData).subscribe(result => {
       alert('da them thanh cong!');
       this.router.navigateByUrl('/list-syllabus');
     });
   }
 
-  uploadImage() {
-    const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-    this.httpClient.post('http://localhost:8080/image', uploadData)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.receivedImageData = res;
-          this.base64Data = this.receivedImageData.pic;
-          this.convertedImage = 'data:image/jpeg;base64,' + this.base64Data;
-          this.uploadImageService.addImage(this.convertedImage);
-        },
-        err => console.log('Error Occurred during saving: ' + err)
-      );
-  }
 
   onFileChanged(event) {
     this.selectedFile = event.target.files[0];
@@ -67,6 +52,5 @@ export class SyllabusAddComponent implements OnInit {
     reader.onload = (event2) => {
       this.imgURL = reader.result;
     };
-
   }
 }

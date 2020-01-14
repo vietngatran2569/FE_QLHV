@@ -27,6 +27,7 @@ import {ActivityListComponent} from './qlhv/activity/activity-list/activity-list
 import {ActivityEditComponent} from './qlhv/activity/activity-edit/activity-edit.component';
 import {RouterModule} from '@angular/router';
 import {ActivityAddComponent} from './qlhv/activity/activity-add/activity-add.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ActivityAddComponent} from './qlhv/activity/activity-add/activity-add.co
     SkillListComponent,
     ActivityListComponent,
     ActivityEditComponent,
-    ActivityAddComponent
+    ActivityAddComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
