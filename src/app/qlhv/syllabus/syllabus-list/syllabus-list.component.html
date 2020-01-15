@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-info" (click)="getCreateForm()">Create new Syllabus</button><br><br>
+<button type="button" class="btn btn-info" (click)="getCreateForm()" *ngIf="authority === 'pm' ">Create new Syllabus</button><br><br>
 <div class="row" style="border: 1px;">
   <div class="col-4" *ngFor="let item of syllabusList" style="padding-top: 10px">
     <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>

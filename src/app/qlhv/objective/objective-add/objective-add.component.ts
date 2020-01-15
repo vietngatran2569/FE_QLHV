@@ -40,12 +40,13 @@ export class ObjectiveAddComponent implements OnInit {
     const objective: Objective = {
       id: this.objectiveForm.value.id,
       name: this.objectiveForm.value.name,
-      syllabus_id: this.objectiveForm.value.syllabus.id
-    }
-    // console.log(this.objectiveForm.value);
+      syllabus: {
+        id: this.objectiveForm.value.syllabus
+      }
+    };
+    console.log(this.objectiveForm.value);
     this.objectiveService.addObjective(objective).subscribe(result => {
       this.isSuccess = true;
-      this.router.navigateByUrl("/list-objective")
     }, error => {
       this.isSuccess = false;
     });

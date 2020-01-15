@@ -5,6 +5,7 @@ import {ObjectiveService} from '../../../services/objective/objective.service';
 import {TransferDataService} from '../../../services/transfer-data/transfer-data.service';
 import {Syllabus} from '../../../interface/syllabus';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-objective-list',
@@ -18,10 +19,15 @@ export class ObjectiveListComponent implements OnInit {
   count = 3;
   private syllabus: Syllabus;
 
+  private roles: string[];
+  private authority: string;
+
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
               private dataTransferService: TransferDataService,
-              private syllabusService: SyllabusService) {
+              private syllabusService: SyllabusService,
+              private tokenStorage: TokenStorageService
+              ) {
   }
 
   ngOnInit() {
@@ -31,6 +37,20 @@ export class ObjectiveListComponent implements OnInit {
     }, error => {
       console.log('error');
     });
+    if (this.tokenStorage.getToken()) {
+      this.roles = this.tokenStorage.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.authority = 'admin';
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.authority = 'pm';
+          return false;
+        }
+        this.authority = 'user';
+        return true;
+      });
+    }
   }
 
   submitDeleteObjective(id: number) {
@@ -52,13 +72,13 @@ export class ObjectiveListComponent implements OnInit {
     this.router.navigateByUrl('/edit-objective');
   }
 
-  getSyllabusName(id: number){
-    this.objectiveService.getSyllabus(id).subscribe(data =>{
+  getSyllabusName(id: number) {
+    this.objectiveService.getSyllabus(id).subscribe(data => {
       this.syllabus = data;
     });
   }
 
   getCreateObjectiveForm() {
-    this.router.navigateByUrl("/add-objective");
+    this.router.navigateByUrl('/add-objective');
   }
 }

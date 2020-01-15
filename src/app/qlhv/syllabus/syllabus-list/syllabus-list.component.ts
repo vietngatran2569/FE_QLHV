@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Syllabus} from '../../../interface/syllabus';
 import {Router} from '@angular/router';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-syllabus-list',
@@ -13,12 +14,30 @@ export class SyllabusListComponent implements OnInit {
   syllabusList: Syllabus[];
   isFormHidden = true;
 
+  private roles: string[];
+  private authority: string;
+
   constructor(private syllabusService: SyllabusService,
-              private router: Router) {
+              private router: Router,
+              private tokenStorage: TokenStorageService) {
     this.updateList();
   }
 
   ngOnInit() {
+    if (this.tokenStorage.getToken()) {
+      this.roles = this.tokenStorage.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.authority = 'admin';
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.authority = 'pm';
+          return false;
+        }
+        this.authority = 'user';
+        return true;
+      });
+    }
   }
 
   showFormAdd() {

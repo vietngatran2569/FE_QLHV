@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-info" (click)="getCreateObjectiveForm()">Create new Objective</button><br><br>
+<button type="button" class="btn btn-info" (click)="getCreateObjectiveForm()" *ngIf="authority === 'pm' ">Create new Objective</button><br><br>
 
 <div class="container-fluid">
   <div class="row col-md-12 col-md-offset-2 text-center">
@@ -6,8 +6,8 @@
       <thead>
       <tr>
         <th>List Objective</th>
-<!--        <th>Type Syllabus</th>-->
-        <th class="text-center"></th>
+        <th>Type Syllabus</th>
+        <th>Operator</th>
       </tr>
       </thead>
       <tr *ngFor="let objective of objectives ">

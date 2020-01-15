@@ -4,7 +4,7 @@ import {Syllabus} from '../../../interface/syllabus';
 import {HttpClient} from '@angular/common/http';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
 import {UploadImageService} from '../../../services/upload-image/upload-image.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-syllabus-add',
@@ -35,7 +35,7 @@ export class SyllabusAddComponent implements OnInit {
   onSubmit() {
     const syllabus = this.syllabusForm.value;
     const formData = new FormData();
-    formData.append("syllabusInfo", JSON.stringify(syllabus));
+    formData.append('syllabusInfo', JSON.stringify(syllabus));
     formData.append('image', this.selectedFile);
     // this.addSyllabus.emit(syllabus);
     this.syllabusService.addSyllabus(formData).subscribe(result => {
