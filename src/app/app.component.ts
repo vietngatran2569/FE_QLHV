@@ -21,11 +21,7 @@ export class AppComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
-        if (role === 'ROLE_ADMIN') {
-          this.isLoggedIn = true;
-          this.isAuthorized = true;
-          return false;
-        } else if (role === 'ROLE_PM') {
+        if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
           this.isLoggedIn = true;
           this.isAuthorized = true;
           return false;
