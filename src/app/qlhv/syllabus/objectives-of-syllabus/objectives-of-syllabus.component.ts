@@ -4,19 +4,23 @@ import {ObjectiveService} from '../../../services/objective/objective.service';
 import {Router} from '@angular/router';
 import {TransferDataService} from '../../../services/transfer-data/transfer-data.service';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-objectives-of-syllabus',
   templateUrl: './objectives-of-syllabus.component.html',
-  styleUrls: ['./objectives-of-syllabus.component.css']
+  styleUrls: ['./objectives-of-syllabus.component.scss']
 })
 export class ObjectivesOfSyllabusComponent implements OnInit {
   objectives: Objective[];
+  isAuthorized: boolean = false;
+  roles: string[];
 
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
               private dataTransferService: TransferDataService,
-              private syllabusService: SyllabusService,) { }
+              private syllabusService: SyllabusService,
+              private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
     const id = this.syllabusService.getData();
@@ -26,6 +30,18 @@ export class ObjectivesOfSyllabusComponent implements OnInit {
     }, error => {
       console.log('error');
     });
+    if (this.tokenStorage.getToken()) {
+      this.roles = this.tokenStorage.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.isAuthorized = true;
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.isAuthorized = true;
+          return false;
+        }
+      });
+    }
   }
 
 
