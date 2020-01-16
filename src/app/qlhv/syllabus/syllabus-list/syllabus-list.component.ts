@@ -10,6 +10,7 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
   styleUrls: ['./syllabus-list.component.scss']
 })
 export class SyllabusListComponent implements OnInit {
+  urlteam = 'http://localhost:8080/image/team.jpeg';
 
   syllabusList: Syllabus[];
   isFormHidden = true;
