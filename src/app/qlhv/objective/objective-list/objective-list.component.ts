@@ -72,11 +72,11 @@ export class ObjectiveListComponent implements OnInit {
     this.router.navigateByUrl('/edit-objective');
   }
 
-  getSyllabusName(id: number) {
-    this.objectiveService.getSyllabus(id).subscribe(data => {
-      this.syllabus = data;
-    });
-  }
+  // getSyllabusName(id: number) {
+  //   this.objectiveService.getSyllabus(id).subscribe(data => {
+  //     this.syllabus = data;
+  //   });
+  // }
 
   getCreateObjectiveForm() {
     this.router.navigateByUrl('/add-objective');

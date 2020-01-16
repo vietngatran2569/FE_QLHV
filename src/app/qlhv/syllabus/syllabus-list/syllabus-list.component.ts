@@ -16,7 +16,7 @@ export class SyllabusListComponent implements OnInit {
   isFormHidden = true;
 
   private roles: string[];
-  private authority: string;
+  private isAuthorized: boolean = false;
 
   constructor(private syllabusService: SyllabusService,
               private router: Router,
@@ -29,13 +29,12 @@ export class SyllabusListComponent implements OnInit {
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
         if (role === 'ROLE_ADMIN') {
-          this.authority = 'admin';
+          this.isAuthorized = true;
           return false;
         } else if (role === 'ROLE_PM') {
-          this.authority = 'pm';
+          this.isAuthorized = true;
           return false;
         }
-        this.authority = 'user';
         return true;
       });
     }

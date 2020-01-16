@@ -46,7 +46,7 @@ export class  ObjectiveService {
     return this.httpClient.delete(objectiveAPI + '/' + id);
   }
 
-  getSyllabus(id: number): Observable<Syllabus>{
-    return this.httpClient.get<Syllabus>(objectiveAPI + '/getSyllabusName/'+ id);
-  }
+  // getSyllabus(id: number): Observable<Syllabus>{
+  //   return this.httpClient.get<Syllabus>(objectiveAPI + '/getSyllabusName/'+ id);
+  // }
 }

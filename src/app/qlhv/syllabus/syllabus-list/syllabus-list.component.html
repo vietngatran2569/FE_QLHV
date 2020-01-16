@@ -1,11 +1,11 @@
-<button type="button" class="btn btn-info" (click)="getCreateForm()" *ngIf="authority === 'pm' ">Create new Syllabus</button><br><br>
+<button type="button" class="btn btn-info" (click)="getCreateForm()" *ngIf="isAuthorized">Create new Syllabus</button><br><br>
 <div class="row">
   <div class="col-3" *ngFor="let item of syllabusList">
     <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>
   </div>
 </div>
 
-<div class="w3-container w3-padding-32 w3-center" *ngIf="authority === 'user' ">
+<div class="w3-container w3-padding-32 w3-center" *ngIf="!isAuthorized">
   <h3>About Me, About My Team</h3><br>
   <img [src]="urlteam" class="w3-image" style="display:block;margin:auto" width="800px" height="533px">
   <div class="w3-padding-32">
@@ -21,7 +21,7 @@
 <hr>
 
 <!-- Footer -->
-<footer class="w3-row-padding w3-padding-32" *ngIf="authority === 'user' ">
+<footer class="w3-row-padding w3-padding-32" *ngIf="!isAuthorized">
   <div class="w3-third">
     <h3>FOOTER</h3>
     <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue

@@ -62,11 +62,11 @@
 <!-- Top menu -->
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" (click)="w3_open()" *ngIf="authority === 'pm' ">☰</div>
-    <div class="w3-right w3-padding-16" *ngIf="!authority">
+    <div class="w3-button w3-padding-16 w3-left" (click)="w3_open()" *ngIf="isAuthorized">☰</div>
+    <div class="w3-right w3-padding-16" *ngIf="!isLoggedIn">
       <a class="nav-link" routerLink="auth/login">Login</a>
     </div>
-    <div class="w3-right w3-padding-16" *ngIf="authority">
+    <div class="w3-right w3-padding-16" *ngIf="isLoggedIn">
       <a class="nav-link" routerLink="home">Infor</a>
     </div>
     <div class="w3-center w3-padding-16"><a href="/list-syllabus">My course</a></div>
