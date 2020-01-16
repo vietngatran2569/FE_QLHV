@@ -21,4 +21,5 @@ export class TransferDataService {
   clearData() {
     this.data = undefined;
   }
+
 }

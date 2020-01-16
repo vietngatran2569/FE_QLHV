@@ -19,6 +19,7 @@ import {SyllabusListComponent} from './qlhv/syllabus/syllabus-list/syllabus-list
 import {SkillAddComponent} from './qlhv/skill/skill-add/skill-add.component';
 import {ActivityListComponent} from './qlhv/activity/activity-list/activity-list.component';
 import {SkillEditComponent} from './qlhv/skill/skill-edit/skill-edit.component';
+import {ObjectivesOfSyllabusComponent} from './qlhv/syllabus/objectives-of-syllabus/objectives-of-syllabus.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'edit-syllabus',
     component: SyllabusEditComponent,
+  },
+  {
+    path: 'objectives-of-syllabus',
+    component: ObjectivesOfSyllabusComponent
   },
   {
     path: 'list-objective',

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Syllabus} from '../../interface/syllabus';
 import {Observable} from 'rxjs';
+import {Objective} from '../../interface/objective';
 
 const syllabusAPI = 'http://localhost:8080/api/syllabus';
 
@@ -43,5 +44,9 @@ export class SyllabusService {
 
   deleteSyllabus(id: number) {
     return this.httpClient.delete(syllabusAPI + '/' + id);
+  }
+
+  getObjectives(id: number){
+    return this.httpClient.get<Objective[]>(syllabusAPI + '/' + id + '/objectiveList');
   }
 }
