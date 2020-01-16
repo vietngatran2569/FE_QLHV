@@ -1,11 +1,20 @@
-<div class="card w3-center" style="width: 18rem; height: 320px">
-  <div class="card-body">
-    <a href="/list-objective" class="card-title">{{syllabus.name}}
-    <br/>
-    <img style="width: 50%" class="card-title" src="{{syllabus.image}}"/>
-    </a>
-    <p class="card-text">{{syllabus.description}}</p>
-    <button (click)="editProduct()" class="btn btn-secondary" style="margin-right: 5px" *ngIf="authority === 'pm' ">Edit</button>
-    <button (click)="deleteProduct()" class="btn btn-secondary" *ngIf="authority === 'pm' ">Delete</button>
+<!--<div class="card w3-center" style="width: 18rem; height: 320px">-->
+<!--  <div class="card-body">-->
+<!--    <a href="/list-objective" class="card-title">{{syllabus.name}}-->
+<!--    <br/>-->
+<!--    <img style="width: 50%" class="card-title" src="{{syllabus.image}}"/>-->
+<!--    </a>-->
+<!--    <p class="card-text">{{syllabus.description}}</p>-->
+<!--    <button (click)="editProduct()" class="btn btn-secondary" style="margin-right: 5px" *ngIf="authority === 'pm' ">Edit</button>-->
+<!--    <button (click)="deleteProduct()" class="btn btn-secondary" *ngIf="authority === 'pm' ">Delete</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container">
+  <img [src]="syllabus.image" height="194" width="259" class="image"/>
+  <h3>{{syllabus.name}}</h3>
+  <p>{{syllabus.description}}</p>
+  <div class="middle">
+    <div class="text"><a href="/list-objective">View</a></div>
   </div>
 </div>

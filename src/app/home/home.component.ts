@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {TokenStorageService} from '../auth/token-storage.service';
+import {SyllabusService} from '../services/syllabus/syllabus.service';
+import {Syllabus} from '../interface/syllabus';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +16,12 @@ export class HomeComponent implements OnInit {
   urlimg3 = 'http://localhost:8080/image/java5.jpeg';
   urlimg4 = 'http://localhost:8080/image/java6.jpg';
   urlteam = 'http://localhost:8080/image/team.jpeg';
-  constructor(private token: TokenStorageService) {
+  constructor(private token: TokenStorageService,
+              private syllabusService: SyllabusService) {
   }
 
   ngOnInit() {
+    // console.log(this.syllabusList);
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
