@@ -1,6 +1,6 @@
 <div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" (click)="w3_open()" *ngIf="isAuthorized">☰</div>
+  <div class="w3-button w3-padding-16 w3-left" (click)="w3_open()" *ngIf="isAuthorized">☰</div>
+  <div class="w3-white w3-xlarge" (click)="w3_close()" style="max-width:1200px;margin:auto">
     <div class="w3-right w3-padding-16" *ngIf="!isLoggedIn">
       <a class="nav-link" routerLink="auth/login">Login</a>
     </div>

@@ -57,6 +57,8 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-    window.location.reload();
+    this.router.navigateByUrl('/list-syllabus').then(() => {
+      window.location.reload();
+    });
   }
 }

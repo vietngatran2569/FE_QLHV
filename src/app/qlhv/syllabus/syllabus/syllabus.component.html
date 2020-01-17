@@ -12,9 +12,21 @@
 
 <div class="container">
   <img [src]="syllabus.image" height="194" width="259" class="image"/>
-  <h3>{{syllabus.name}}</h3>
-  <p>{{syllabus.description}}</p>
+  <div class="row">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h3>{{syllabus.name}}</h3>
+  </div>
+  <div class="row">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>{{syllabus.description}}</p>
+  </div>
   <div class="middle">
     <div class="text"><a (click)="getObjectives(syllabus.id)">View</a></div>
+  </div>
+  <div class="row" *ngIf="isAuthorized">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a (click)="editProduct()" class="btn btn-primary">Edit</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a (click)="deleteProduct()" class="btn btn-danger">Delete</a>
   </div>
 </div>

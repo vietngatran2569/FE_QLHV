@@ -38,7 +38,7 @@ export class SyllabusAddComponent implements OnInit {
     formData.append('syllabusInfo', JSON.stringify(syllabus));
     formData.append('image', this.selectedFile);
     // this.addSyllabus.emit(syllabus);
-    this.syllabusService.addSyllabus(formData).subscribe(result => {
+    this.syllabusService.addSyllabus(formData).subscribe(() => {
       alert('da them thanh cong!');
       this.router.navigateByUrl('/list-syllabus');
     });
@@ -49,7 +49,7 @@ export class SyllabusAddComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (event2) => {
+    reader.onload = () => {
       this.imgURL = reader.result;
     };
   }

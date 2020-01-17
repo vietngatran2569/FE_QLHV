@@ -44,11 +44,11 @@ export class ObjectiveAddComponent implements OnInit {
         id: this.objectiveForm.value.syllabus
       }
     };
-    console.log(this.objectiveForm.value);
-    this.objectiveService.addObjective(objective).subscribe(result => {
-      this.isSuccess = true;
-    }, error => {
+    // console.log(this.objectiveForm.value);
+    this.objectiveService.addObjective(objective, objective.syllabus.id).subscribe(() => {
       this.isSuccess = false;
+    }, error => {
+      this.isSuccess = true;
     });
   }
 }

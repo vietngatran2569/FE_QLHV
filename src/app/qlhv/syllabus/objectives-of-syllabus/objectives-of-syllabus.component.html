@@ -19,8 +19,8 @@
           <input type="checkbox">
         </td>
         <td class="text-center">
-          <a class="btn btn-primary" (click)="goToEdit(objective)">Edit<em class="fa fa-pencil"></em></a>
-          <button class="btn btn-danger" (click)="submitDeleteObjective(objective.id)">Delete<em
+          <a class="btn btn-primary" (click)="goToEdit(objective)" *ngIf="isAuthorized">Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteObjective(objective.id)" *ngIf="isAuthorized">Delete<em
             class="fa fa-trash"></em></button>
         </td>
       </tr>

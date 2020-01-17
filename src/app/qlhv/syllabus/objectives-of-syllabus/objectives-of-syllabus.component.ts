@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Objective} from '../../../interface/objective';
 import {ObjectiveService} from '../../../services/objective/objective.service';
 import {Router} from '@angular/router';
@@ -13,37 +13,38 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
 })
 export class ObjectivesOfSyllabusComponent implements OnInit {
   objectives: Objective[];
-  isAuthorized: boolean = false;
+  isAuthorized = false;
   roles: string[];
 
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
               private dataTransferService: TransferDataService,
               private syllabusService: SyllabusService,
-              private tokenStorage: TokenStorageService) { }
+              private tokenStorage: TokenStorageService) {
+  }
 
   ngOnInit() {
     const id = this.syllabusService.getData();
     this.syllabusService.getObjectives(id).subscribe(result => {
       this.objectives = result;
       console.log('success');
-    }, error => {
+    }, () => {
       console.log('error');
     });
     if (this.tokenStorage.getToken()) {
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
-        if (role === 'ROLE_ADMIN') {
+        if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
           this.isAuthorized = true;
           return false;
-        } else if (role === 'ROLE_PM') {
+        }
+        if (this.roles.length > 1) {
           this.isAuthorized = true;
           return false;
         }
       });
     }
   }
-
 
 
   submitDeleteObjective(id: number) {
@@ -53,9 +54,9 @@ export class ObjectivesOfSyllabusComponent implements OnInit {
   }
 
   deleteCategory(id: number) {
-    this.objectiveService.deleteObjective(id).subscribe(result => {
+    this.objectiveService.deleteObjective(id).subscribe(() => {
       console.log('success');
-    }, error => {
+    }, () => {
       console.log('error');
     });
   }
@@ -64,6 +65,7 @@ export class ObjectivesOfSyllabusComponent implements OnInit {
     this.objectiveService.setData(item);
     this.router.navigateByUrl('/edit-objective');
   }
+
   getCreateObjectiveForm() {
     this.router.navigateByUrl('/add-objective');
   }

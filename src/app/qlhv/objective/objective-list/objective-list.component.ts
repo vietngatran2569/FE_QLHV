@@ -15,12 +15,9 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
 export class ObjectiveListComponent implements OnInit {
 
   objectives: Objective[] = [];
-  p = 1;
-  count = 3;
-  private syllabus: Syllabus;
 
-  private roles: string[];
-  private authority: string;
+  public roles: string[];
+  public authority: string;
 
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
@@ -71,12 +68,6 @@ export class ObjectiveListComponent implements OnInit {
     this.objectiveService.setData(item);
     this.router.navigateByUrl('/edit-objective');
   }
-
-  // getSyllabusName(id: number) {
-  //   this.objectiveService.getSyllabus(id).subscribe(data => {
-  //     this.syllabus = data;
-  //   });
-  // }
 
   getCreateObjectiveForm() {
     this.router.navigateByUrl('/add-objective');

@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  w3_close() {
+    document.getElementById('mySidebar').style.display = 'none';
+  }
 }

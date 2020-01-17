@@ -10,13 +10,10 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
   styleUrls: ['./syllabus-list.component.scss']
 })
 export class SyllabusListComponent implements OnInit {
-  urlteam = 'http://localhost:8080/image/team.jpeg';
-
   syllabusList: Syllabus[];
-  isFormHidden = true;
 
-  private roles: string[];
-  private isAuthorized: boolean = false;
+  public roles: string[];
+  public isAuthorized = false;
 
   constructor(private syllabusService: SyllabusService,
               private router: Router,
@@ -39,15 +36,6 @@ export class SyllabusListComponent implements OnInit {
       });
     }
   }
-
-  showFormAdd() {
-    this.isFormHidden = !this.isFormHidden;
-  }
-
-  addSyllabus(syllabus: Syllabus) {
-    this.syllabusList.push(syllabus);
-  }
-
   updateList() {
     this.syllabusService.getList().subscribe(result => {
       this.syllabusList = result;
