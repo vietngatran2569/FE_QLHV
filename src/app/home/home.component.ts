@@ -11,11 +11,15 @@ import {Syllabus} from '../interface/syllabus';
 })
 export class HomeComponent implements OnInit {
   info: any;
-  urlimg1 = 'http://localhost:8080/image/java1.jpeg';
-  urlimg2 = 'http://localhost:8080/image/java4.png';
-  urlimg3 = 'http://localhost:8080/image/java5.jpeg';
-  urlimg4 = 'http://localhost:8080/image/java6.jpg';
-  urlteam = 'http://localhost:8080/image/team.jpeg';
+  bcPreparationURL = 'http://localhost:8080/image/preparation.jpg';
+  cscd1URL = 'http://localhost:8080/image/cscd1.png';
+  kanbanURL = 'http://localhost:8080/image/kanban.png';
+  cscd2URL = 'http://localhost:8080/image/cscd2.jpg';
+  // urlteam = 'http://localhost:8080/image/team.jpeg';
+  javaSpringURL = 'http://localhost:8080/image/javaSpring.png';
+  scrumURL = 'http://localhost:8080/image/scrum.png';
+  webFEURL = 'http://localhost:8080/image/webFE.jpg';
+  aiURL = 'http://localhost:8080/image/ai.jpeg';
   constructor(private token: TokenStorageService,
               private syllabusService: SyllabusService) {
   }

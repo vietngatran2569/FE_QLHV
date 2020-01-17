@@ -29,6 +29,8 @@ import {RouterModule} from '@angular/router';
 import {ActivityAddComponent} from './qlhv/activity/activity-add/activity-add.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ObjectivesOfSyllabusComponent } from './qlhv/syllabus/objectives-of-syllabus/objectives-of-syllabus.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { ObjectivesOfSyllabusComponent } from './qlhv/syllabus/objectives-of-syl
     ActivityEditComponent,
     ActivityAddComponent,
     SideBarComponent,
-    ObjectivesOfSyllabusComponent
+    ObjectivesOfSyllabusComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

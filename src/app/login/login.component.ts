@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     // this.reloadPage();
   }
 
-  // reloadPage() {
-  //   window.location.reload();
-  // }
+  reloadPage() {
+    window.location.reload();
+  }
 }

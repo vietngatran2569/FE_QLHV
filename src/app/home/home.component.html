@@ -14,7 +14,7 @@
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center" >
       <div class="w3-quarter container">
-        <img [src]="urlimg1" height="194" width="259" class="image"/>
+        <img [src]="bcPreparationURL" height="194" width="259" class="image"/>
         <h3>BootCamp Preparation</h3>
         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg2" height="194" width="259" class="image"/>
+        <img [src]="cscd1URL" height="194" width="259" class="image"/>
         <h3>[BOOTCAMP] CSCD 1</h3>
         <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -30,15 +30,15 @@
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg4" height="194" width="259" class="image"/>
-        <h3>BootCamp Preparation 2.0</h3>
+        <img [src]="kanbanURL" height="194" width="259" class="image"/>
+        <h3>Kanban</h3>
         <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
           <div class="text"><a href="auth/login">Login to view</a></div>
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg3" height="194" width="259" class="image"/>
+        <img [src]="cscd2URL" height="194" width="259" class="image"/>
         <h3>[BOOTCAMP] CSCD 2</h3>
         <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -50,15 +50,15 @@
     <!-- Second Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center">
       <div class="w3-quarter container">
-        <img [src]="urlimg4" height="194" width="259" class="image"/>
-        <h3>[BOOTCAMP] CSCD 3</h3>
+        <img [src]="aiURL" height="194" width="259" class="image"/>
+        <h3>Artificial Intelligence</h3>
         <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
           <div class="text"><a href="auth/login">Login to view</a></div>
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg3" height="194" width="259" class="image"/>
+        <img [src]="webFEURL" height="194" width="259" class="image"/>
         <h3>WEB Fundamentals</h3>
         <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg2" height="194" width="259" class="image"/>
+        <img [src]="scrumURL" height="194" width="259" class="image"/>
         <h3>Scrum Essence</h3>
         <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="w3-quarter container">
-        <img [src]="urlimg1" height="194" width="259" class="image"/>
+        <img [src]="javaSpringURL" height="194" width="259" class="image"/>
         <h3>[BOOTCAMP-JAVA] JAVA SPRING</h3>
         <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
         <div class="middle">
@@ -114,40 +114,6 @@
 <!--    <hr>-->
 
     <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
-      <div class="w3-third">
-        <h3>FOOTER</h3>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
-          gravida diam non fringilla.</p>
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">big.bang</a></p>
-      </div>
-
-      <div class="w3-third">
-        <h3>BLOG POSTS</h3>
-        <ul class="w3-ul w3-hoverable">
-          <li class="w3-padding-16">
-            <img class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Lorem</span><br>
-            <span>Sed mattis nunc</span>
-          </li>
-          <li class="w3-padding-16">
-            <img class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Ipsum</span><br>
-            <span>Praes tinci sed</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="w3-third w3-serif">
-        <h3>POPULAR TAGS</h3>
-        <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Contact</span><BR>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Instagram</span><BR>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span><BR>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Twitter</span><BR>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Facebook</span><BR>
-        </p>
-      </div>
-    </footer>
+    <app-footer></app-footer>
   </div>
 </ng-template>
