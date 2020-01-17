@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Objective} from '../../interface/objective';
-import {Syllabus} from "../../interface/syllabus";
+import {Syllabus} from '../../interface/syllabus';
 
 const objectiveAPI = 'http://localhost:8080/api/objective';
 
 @Injectable({
   providedIn: 'root'
 })
-export class  ObjectiveService {
+export class ObjectiveService {
 
   constructor(private httpClient: HttpClient) {
   }
@@ -46,7 +46,7 @@ export class  ObjectiveService {
     return this.httpClient.delete(objectiveAPI + '/' + id);
   }
 
-  // getSyllabus(id: number): Observable<Syllabus>{
-  //   return this.httpClient.get<Syllabus>(objectiveAPI + '/getSyllabusName/'+ id);
-  // }
+  getSkill(id: number) {
+    return this.httpClient.get<Objective[]>(objectiveAPI + '/' + id + '/skillList');
+  }
 }

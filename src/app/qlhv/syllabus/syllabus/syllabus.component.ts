@@ -39,20 +39,8 @@ export class SyllabusComponent implements OnInit {
       });
     }
   }
-
-  // editProduct() {
-  //   this.edit.emit();
-  // }
-  //
-  // deleteProduct() {
-  //   this.syllabusService.deleteSyllabus(this.syllabus.id).subscribe(result => {
-  //     alert('xoa thanh cong');
-  //     this.delete.emit();
-  //   });
-  // }
-
   getObjectives(id: number) {
     this.syllabusService.setData(id);
-    this.router.navigateByUrl("/objectives-of-syllabus");
+    this.router.navigateByUrl('/objectives-of-syllabus');
   }
 }

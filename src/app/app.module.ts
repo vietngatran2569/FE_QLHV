@@ -31,6 +31,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ObjectivesOfSyllabusComponent } from './qlhv/syllabus/objectives-of-syllabus/objectives-of-syllabus.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SkillOfObjectiveComponent } from './qlhv/objective/skill-of-objective/skill-of-objective.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SideBarComponent,
     ObjectivesOfSyllabusComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    SkillOfObjectiveComponent
   ],
   imports: [
     BrowserModule,

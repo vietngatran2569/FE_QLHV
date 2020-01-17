@@ -13,7 +13,7 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
 })
 export class ObjectivesOfSyllabusComponent implements OnInit {
   objectives: Objective[];
-  isAuthorized: boolean = false;
+  isAuthorized = false;
   roles: string[];
 
   constructor(private objectiveService: ObjectiveService,
