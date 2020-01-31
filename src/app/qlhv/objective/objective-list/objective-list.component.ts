@@ -72,4 +72,9 @@ export class ObjectiveListComponent implements OnInit {
   getCreateObjectiveForm() {
     this.router.navigateByUrl('/add-objective');
   }
+
+  getSKills(id: number) {
+    this.objectiveService.setData(id);
+    this.router.navigateByUrl('/skills-of-objective');
+  }
 }

@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tr *ngFor="let objective of objectives ">
-        <td>{{objective.name}}</td>
+        <td><a (click)="getSKills(objective.id)">{{objective.name}}</a></td>
 <!--        <td>{{objective.syllabus_id}}</td>-->
         <td class="text-center">
           <a class="btn btn-light" (click)="goToEdit(objective)">Edit<em class="fa fa-pencil"></em></a>
