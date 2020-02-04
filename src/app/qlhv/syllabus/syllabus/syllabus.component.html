@@ -21,7 +21,9 @@
     <p>{{syllabus.description}}</p>
   </div>
   <div class="middle">
-    <div class="text"><a (click)="getObjectives(syllabus.id)">View</a></div>
+<!--    <div class="text">-->
+      <a id="btn-effect" (click)="getObjectives(syllabus.id)"><span>View</span></a>
+<!--    </div>-->
   </div>
   <div class="row" *ngIf="isAuthorized">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

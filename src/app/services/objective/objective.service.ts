@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Objective} from '../../interface/objective';
 import {Syllabus} from '../../interface/syllabus';
+import {Skill} from "../../interface/skill";
 
 const objectiveAPI = 'http://localhost:8080/api/objective';
 
@@ -46,7 +47,11 @@ export class ObjectiveService {
     return this.httpClient.delete(objectiveAPI + '/' + id);
   }
 
-  getSyllabus(id: number): Observable<Syllabus> {
-    return this.httpClient.get<Syllabus>(objectiveAPI + '/getSyllabusName/' + id);
+  getSkills(id: number){
+    return this.httpClient.get<Skill[]>(objectiveAPI + '/' + id + '/getSkillList');
   }
+
+  // getSyllabus(id: number): Observable<Syllabus> {
+  //   return this.httpClient.get<Syllabus>(objectiveAPI + '/getSyllabusName/' + id);
+  // }
 }

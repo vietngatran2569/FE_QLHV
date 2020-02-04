@@ -20,6 +20,7 @@ import {SkillAddComponent} from './qlhv/skill/skill-add/skill-add.component';
 import {ActivityListComponent} from './qlhv/activity/activity-list/activity-list.component';
 import {SkillEditComponent} from './qlhv/skill/skill-edit/skill-edit.component';
 import {ObjectivesOfSyllabusComponent} from './qlhv/syllabus/objectives-of-syllabus/objectives-of-syllabus.component';
+import {SkillsOfObjectiveComponent} from "./qlhv/objective/skills-of-objective/skills-of-objective.component";
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'edit-objective',
     component: ObjectiveEditComponent,
+  },
+  {
+    path: 'skills-of-objective',
+    component: SkillsOfObjectiveComponent
   },
   {
     path: 'list-skill',

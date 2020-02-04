@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {Objective} from '../../../interface/objective';
 import {ObjectiveService} from '../../../services/objective/objective.service';
 import {TransferDataService} from '../../../services/transfer-data/transfer-data.service';
-import {Syllabus} from '../../../interface/syllabus';
 import {SyllabusService} from '../../../services/syllabus/syllabus.service';
 import {TokenStorageService} from '../../../auth/token-storage.service';
 
@@ -57,7 +56,7 @@ export class ObjectiveListComponent implements OnInit {
   }
 
   deleteCategory(id: number) {
-    this.objectiveService.deleteObjective(id).subscribe(result => {
+    this.objectiveService.deleteObjective(id).subscribe(() => {
       console.log('success');
     }, error => {
       console.log('error');
