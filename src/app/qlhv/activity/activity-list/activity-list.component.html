@@ -3,14 +3,12 @@
     <table class="table table-striped custab">
       <thead>
       <tr>
-        <th>List Activity</th>
-        <th>Type Skill</th>
+        <th>List Learning Activity</th>
         <th class="text-center">Operation</th>
       </tr>
       </thead>
       <tr *ngFor="let activiti of activity ">
         <td>{{activiti.name}}</td>
-
         <td class="text-center">
           <a class="btn btn-light" (click)="goToEdit(activiti)">Edit<em class="fa fa-pencil"></em></a>
           <button class="btn btn-danger" (click)="submitDeleteActivity(activiti.id)">Delete<em

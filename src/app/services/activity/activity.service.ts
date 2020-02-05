@@ -32,8 +32,8 @@ export class ActivityService {
     return this.httpClient.get<Activity[]>(activityAPI);
   }
 
-  addActivity(product: Activity) {
-    return this.httpClient.post(activityAPI + '/create', product);
+  addActivity(product: Activity, id: number) {
+    return this.httpClient.post(activityAPI + '/create/' + id, product);
   }
 
   editActivity(product: Activity) {

@@ -13,14 +13,6 @@
               Name không thể để trống
             </div>
             <br/>
-            <div class="form-group">
-              <label>Description</label><br/>
-              <input type="text" class="form-control" formControlName="name" placeholder="Nhập description"/>
-              <div class="alert alert-danger" role="alert"
-                   *ngIf="activityForm.get('name').invalid && activityForm.get('name').touched">
-                Description không thể để trống
-              </div>
-            </div>
             <div class="form-group ">
               <h3>Activity:</h3>
               <div>
@@ -30,6 +22,14 @@
                 <option>Bai Qiz</option>
                 <option>Bai Doc</option>
                 <option>Link Tham Khao</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group ">
+              <h3>Skill:</h3>
+              <div>
+                <select formControlName="skill">
+                  <option *ngFor="let skilll of skill" [value]="skilll.id">{{skilll.name}}</option>
                 </select>
               </div>
             </div>
