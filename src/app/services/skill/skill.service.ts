@@ -33,8 +33,8 @@ export class SkillService {
     return this.httpClient.get<Skill[]>(skillAPI);
   }
 
-  addSkill(product: Skill) {
-    return this.httpClient.post(skillAPI + '/create', product);
+  addSkill(skill: Skill, id: number) {
+    return this.httpClient.post(skillAPI + '/create/' + id, skill);
   }
 
   editSkill(product: Skill) {

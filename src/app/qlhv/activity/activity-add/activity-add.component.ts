@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Activity} from '../../../interface/activity';
 import {ActivityService} from '../../../services/activity/activity.service';
+import {Objective} from '../../../interface/objective';
 
 @Component({
   selector: 'app-activity-add',

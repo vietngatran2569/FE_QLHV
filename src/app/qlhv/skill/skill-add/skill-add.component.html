@@ -12,6 +12,14 @@
               Name không thể để trống
             </div>
           </div>
+          <div class="form-group ">
+            <h3>Objective:</h3>
+            <div>
+              <select formControlName="objective">
+                <option *ngFor="let objectivee of objective" [value]="objectivee.id">{{objectivee.name}}</option>
+              </select>
+            </div>
+          </div>
           <div class="alert alert-success" role="alert" *ngIf="isSuccess === true">
             Thêm thành công
           </div>
