@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../auth/token-storage.service';
-import {SyllabusService} from '../services/syllabus/syllabus.service';
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-bar',
@@ -12,8 +12,9 @@ export class SideBarComponent implements OnInit {
   public roles: string[];
   public isAuthorized = false;
   public isLoggedIn = false;
+
   constructor(private token: TokenStorageService,
-  ) {
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -28,6 +29,7 @@ export class SideBarComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
   }
+
   private checkAuthorization() {
     this.roles.every(role => {
       if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
@@ -46,6 +48,7 @@ export class SideBarComponent implements OnInit {
   logout() {
     this.token.signOut();
     window.location.reload();
+    this.router.navigateByUrl('/home');
   }
 }
 

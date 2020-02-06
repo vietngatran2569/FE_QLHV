@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../auth/token-storage.service';
 import {SyllabusService} from '../services/syllabus/syllabus.service';
 import {Syllabus} from '../interface/syllabus';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
   webFEURL = 'http://localhost:8080/image/webFE.jpg';
   aiURL = 'http://localhost:8080/image/ai.jpeg';
   constructor(private token: TokenStorageService,
-              private syllabusService: SyllabusService) {
+              private syllabusService: SyllabusService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -34,5 +36,9 @@ export class HomeComponent implements OnInit {
   logout() {
     this.token.signOut();
     window.location.reload();
+  }
+
+  goHome(){
+    this.router.navigateByUrl('/list-syllabus');
   }
 }

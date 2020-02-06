@@ -5,31 +5,37 @@
       <div class="col-sm-6" style="">
         <form name="form" [formGroup]="activityForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <h3>New Learning LearningActivity</h3>
-            <label>Name</label><br/>
-            <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên activity mới"/>
-            <div class="alert alert-danger" role="alert"
-                 *ngIf="activityForm.get('name').invalid && activityForm.get('name').touched">
-              Name không thể để trống
+            <h3>Edit Learning LearningActivity</h3>
+
+            <div class="form-group" hidden>
+              <label for="id">ID</label>
+              <input type="text" id="id" formControlName="id" [value]="activity.id">
             </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                     [value]="activity.name">
+              <div class="alert alert-danger" role="alert"
+                   *ngIf="activityForm.get('name').invalid && activityForm.get('name').touched">
+                Name is required!
+              </div>
+            </div>
+
           </div>
           <div class="form-group ">
-            <h3>LearningActivity:</h3>
+            <h3>Activity:</h3>
             <div>
-              <select>
-                <option>Bai Tap</option>
-                <option>Bai Thuc Hanh</option>
-                <option>Bai Qiz</option>
-                <option>Bai Doc</option>
-                <option>Link Tham Khao</option>
+              <select formControlName="activities">
+                <option *ngFor="let act of activities" [value]="act.id"> {{act.name}}</option>
               </select>
             </div>
           </div>
           <div class="alert alert-success" role="alert" *ngIf="isSuccess === true">
-            Thêm thành công
+            Edit successfully
           </div>
           <div class="alert alert-danger" role="alert" *ngIf="isSuccess === false">
-            Điền thông tin chưa đúng hoặc đã tồn tại
+            Information is invalided
           </div>
 
           <div class="form-group" style="text-align: center">

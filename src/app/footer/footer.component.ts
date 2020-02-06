@@ -11,8 +11,4 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  w3_close() {
-    document.getElementById('mySidebar').style.display = 'none';
-  }
 }
