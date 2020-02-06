@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TokenStorageService} from '../auth/token-storage.service';
+import {SyllabusService} from '../services/syllabus/syllabus.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,16 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
+  info: any;
 
-  constructor() { }
+  constructor(private token: TokenStorageService,
+  ) {
+  }
 
   ngOnInit() {
+    // console.log(this.syllabusList);
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
   }
 
-  w3_close() {
-    document.getElementById('mySidebar').style.display = 'none';
+  logout() {
+    this.token.signOut();
+    window.location.reload();
   }
-
 }
 
 
