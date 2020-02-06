@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-info" (click)="getCreateForm()" *ngIf="isAuthorized">Create new
+  Activities
+</button><br><br>
+
+<div class="container-fluid">
+  <div class="row col-md-12 col-md-offset-2 text-center">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th style="font-size: 22px">List Activities</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tr *ngFor="let skills of activities ">
+        <td>{{skills.name}}</td>
+        <!--        <td>{{objective.syllabus_id}}</td>-->
+        <td>
+          <input type="checkbox">
+        </td>
+        <td class="text-center">
+          <a class="btn btn-primary" (click)="goToEdit(skills)" *ngIf="isAuthorized">Edit<em class="fa fa-pencil"></em></a>
+          <button class="btn btn-danger" (click)="submitDeleteSkill(skills.id)" *ngIf="isAuthorized">Delete<em
+            class="fa fa-trash"></em></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -13,7 +13,7 @@
       </tr>
       </thead>
       <tr *ngFor="let skill of skills ">
-        <td>{{skill.name}}</td>
+        <td><a (click)="getActivity(skill.id)">{{skill.name}}</a></td>
         <!--        <td>{{objective.syllabus_id}}</td>-->
         <td>
           <input type="checkbox">

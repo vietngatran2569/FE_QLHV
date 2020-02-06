@@ -21,6 +21,7 @@ import {ActivityListComponent} from './qlhv/activity/activity-list/activity-list
 import {SkillEditComponent} from './qlhv/skill/skill-edit/skill-edit.component';
 import {ObjectivesOfSyllabusComponent} from './qlhv/syllabus/objectives-of-syllabus/objectives-of-syllabus.component';
 import {SkillsOfObjectiveComponent} from "./qlhv/objective/skills-of-objective/skills-of-objective.component";
+import {ActivitiesOfSkillComponent} from './qlhv/skill/activities-of-skill/activities-of-skill.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path: 'skills-of-objective',
     component: SkillsOfObjectiveComponent
+  },
+  {
+    path: 'activities-of-skill',
+    component: ActivitiesOfSkillComponent
   },
   {
     path: 'list-skill',

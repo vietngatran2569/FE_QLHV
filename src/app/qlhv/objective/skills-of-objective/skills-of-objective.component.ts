@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {ObjectiveService} from "../../../services/objective/objective.service";
-import {Router} from "@angular/router";
-import {TransferDataService} from "../../../services/transfer-data/transfer-data.service";
-import {TokenStorageService} from "../../../auth/token-storage.service";
-import {Objective} from "../../../interface/objective";
-import {SkillService} from "../../../services/skill/skill.service";
-import {Skill} from "../../../interface/skill";
+import {Component, OnInit} from '@angular/core';
+import {ObjectiveService} from '../../../services/objective/objective.service';
+import {Router} from '@angular/router';
+import {TransferDataService} from '../../../services/transfer-data/transfer-data.service';
+import {TokenStorageService} from '../../../auth/token-storage.service';
+import {Objective} from '../../../interface/objective';
+import {SkillService} from '../../../services/skill/skill.service';
+import {Skill} from '../../../interface/skill';
 
 @Component({
   selector: 'app-skills-of-objective',
@@ -22,7 +22,8 @@ export class SkillsOfObjectiveComponent implements OnInit {
               private router: Router,
               private dataTransferService: TransferDataService,
               private skillService: SkillService,
-              private tokenStorage: TokenStorageService) { }
+              private tokenStorage: TokenStorageService) {
+  }
 
   ngOnInit() {
     const id = this.objectiveService.getData();
@@ -69,6 +70,11 @@ export class SkillsOfObjectiveComponent implements OnInit {
 
   getCreateSkillForm() {
     this.router.navigateByUrl('/add-skill');
+  }
+
+  getActivity(id: number) {
+    this.skillService.setData(id);
+    this.router.navigateByUrl('/activities-of-skill');
   }
 
 }

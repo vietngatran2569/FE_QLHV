@@ -10,7 +10,7 @@
       </tr>
       </thead>
       <tr *ngFor="let skill2 of skill">
-        <td>{{skill2.name}}</td>
+        <td><a (click)="getActivity(skill2.id)">{{skill2.name}}</a></td>
         <td class="text-center">
           <a class="btn btn-info" (click)="goToEdit(skill2)" >Edit<em class="fa fa-pencil"></em></a>
           &nbsp;

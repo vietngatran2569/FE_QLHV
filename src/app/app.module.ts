@@ -32,6 +32,7 @@ import { ObjectivesOfSyllabusComponent } from './qlhv/syllabus/objectives-of-syl
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SkillsOfObjectiveComponent } from './qlhv/objective/skills-of-objective/skills-of-objective.component';
+import { ActivitiesOfSkillComponent } from './qlhv/skill/activities-of-skill/activities-of-skill.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SkillsOfObjectiveComponent } from './qlhv/objective/skills-of-objective
     ObjectivesOfSyllabusComponent,
     FooterComponent,
     NavbarComponent,
-    SkillsOfObjectiveComponent
+    SkillsOfObjectiveComponent,
+    ActivitiesOfSkillComponent
   ],
   imports: [
     BrowserModule,
