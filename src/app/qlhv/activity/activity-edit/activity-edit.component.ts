@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {Activity} from '../../../interface/activity';
+import {LearningActivity} from '../../../interface/learningActivity';
 import {ActivityService} from '../../../services/activity/activity.service';
 @Component({
   selector: 'app-activity-edit',
@@ -10,11 +10,11 @@ import {ActivityService} from '../../../services/activity/activity.service';
 })
 export class ActivityEditComponent implements OnInit {
 
-  activity: Activity;
+  activity: LearningActivity;
   activityForm: FormGroup;
   isSuccess: boolean;
 
-  @Output() editSkill = new EventEmitter<Activity>();
+  @Output() editSkill = new EventEmitter<LearningActivity>();
 
   constructor(private activityService: ActivityService,
               private route: Router) {

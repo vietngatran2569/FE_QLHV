@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Skill} from '../../interface/skill';
-import {Activity} from '../../interface/activity';
+import {LearningActivity} from '../../interface/learningActivity';
 
 const skillAPI = 'http://localhost:8080/api/skill';
 
@@ -47,6 +47,6 @@ export class SkillService {
   }
 
   getActivity(id: number) {
-    return this.httpClient.get<Activity[]>(skillAPI + '/' + id + '/learningActivityList');
+    return this.httpClient.get<LearningActivity[]>(skillAPI + '/' + id + '/learningActivityList');
   }
 }

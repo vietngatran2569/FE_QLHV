@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {Activity} from '../../../interface/activity';
+import {LearningActivity} from '../../../interface/learningActivity';
 import {ActivityService} from '../../../services/activity/activity.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {ActivityService} from '../../../services/activity/activity.service';
 })
 export class ActivityListComponent implements OnInit {
 
-  activity: Activity[] = [];
+  activity: LearningActivity[] = [];
 
   constructor(private activityService: ActivityService, private router: Router) {
   }
@@ -39,7 +39,7 @@ export class ActivityListComponent implements OnInit {
     });
   }
 
-  goToEdit(item: Activity) {
+  goToEdit(item: LearningActivity) {
     this.activityService.setData(item);
     this.router.navigateByUrl('/edit-activity');
   }

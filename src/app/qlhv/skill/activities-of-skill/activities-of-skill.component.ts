@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {TransferDataService} from '../../../services/transfer-data/transfer-data.service';
 import {TokenStorageService} from '../../../auth/token-storage.service';
 import {ActivityService} from '../../../services/activity/activity.service';
-import {Activity} from '../../../interface/activity';
+import {LearningActivity} from '../../../interface/learningActivity';
 
 @Component({
   selector: 'app-activities-of-skill',
@@ -63,7 +63,7 @@ export class ActivitiesOfSkillComponent implements OnInit {
     });
   }
 
-  goToEdit(item: Activity) {
+  goToEdit(item: LearningActivity) {
     this.activityService.setData(item);
     this.router.navigateByUrl('/edit-activity');
   }

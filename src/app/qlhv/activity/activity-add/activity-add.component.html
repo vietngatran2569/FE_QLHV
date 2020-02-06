@@ -5,7 +5,7 @@
       <div class="col-sm-6" style="">
         <form name="form" [formGroup]="activityForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <h3>New Learning Activity</h3>
+            <h3>New Learning LearningActivity</h3>
             <label>Name</label><br/>
             <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên activity mới"/>
             <div class="alert alert-danger" role="alert"
@@ -14,14 +14,10 @@
             </div>
             <br/>
             <div class="form-group ">
-              <h3>Activity:</h3>
+              <h3>LearningActivity:</h3>
               <div>
-                <select>
-                <option>Bai Tap</option>
-                <option>Bai Thuc Hanh</option>
-                <option>Bai Qiz</option>
-                <option>Bai Doc</option>
-                <option>Link Tham Khao</option>
+                <select formControlName="activity">
+                  <option *ngFor="let act of activity" [value]="act.id"> {{act.name}}</option>
                 </select>
               </div>
             </div>
