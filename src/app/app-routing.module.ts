@@ -82,7 +82,7 @@ const routes: Routes = [
     component: ObjectiveEditComponent,
   },
   {
-    path: 'skills-of-objective',
+    path: 'activity-of-objective',
     component: SkillsOfObjectiveComponent
   },
   {

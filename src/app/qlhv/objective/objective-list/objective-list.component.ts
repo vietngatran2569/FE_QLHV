@@ -74,6 +74,6 @@ export class ObjectiveListComponent implements OnInit {
 
   getSKills(id: number) {
     this.objectiveService.setData(id);
-    this.router.navigateByUrl('/skills-of-objective');
+    this.router.navigateByUrl('/activity-of-objective');
   }
 }

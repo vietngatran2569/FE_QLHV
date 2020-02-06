@@ -8,7 +8,10 @@
       </tr>
       </thead>
       <tr *ngFor="let activiti of activity ">
-        <td>{{activiti.name}}</td>
+        <td>
+<!--          [<span>{{getActivityName(activiti.activity)}}</span>] -->
+          {{activiti.name}}
+        </td>
         <td class="text-center">
           <a class="btn btn-light" (click)="goToEdit(activiti)">Edit<em class="fa fa-pencil"></em></a>
           <button class="btn btn-danger" (click)="submitDeleteActivity(activiti.id)">Delete<em
