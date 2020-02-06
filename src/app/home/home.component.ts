@@ -14,8 +14,6 @@ export class HomeComponent implements OnInit {
   bcPreparationURL = 'http://localhost:8080/image/preparation.jpg';
   cscd1URL = 'http://localhost:8080/image/cscd1.png';
   kanbanURL = 'http://localhost:8080/image/kanban.png';
-  cscd2URL = 'http://localhost:8080/image/cscd2.jpg';
-  // urlteam = 'http://localhost:8080/image/team.jpeg';
   javaSpringURL = 'http://localhost:8080/image/javaSpring.png';
   scrumURL = 'http://localhost:8080/image/scrum.png';
   webFEURL = 'http://localhost:8080/image/webFE.jpg';

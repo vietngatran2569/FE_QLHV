@@ -1,37 +1,26 @@
-<nav class="w3-sidebar w3-bar-block dropdown w3-card w3-top w3-xlarge w3-animate-left"
-     style="display:none;z-index:2;width:20%;min-width:50px" id="mySidebar">
-  <a href="javascript:void(0)" (click)="w3_close()"
-     class="w3-bar-item w3-button">Close Menu</a>
-  <div class="dropdown" style="width:20%;min-width:83px">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Syllabus
-      <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a routerLink="/list-syllabus" (click)="w3_close()" class="w3-bar-item w3-button">List Syllabus</a></li>
-      <li><a routerLink="/add-syllabus" (click)="w3_close() " class="w3-bar-item w3-button">New Syllabus</a></li>
-    </ul>
-  </div>
-  <div class="dropdown" style="width:20%;min-width:83px">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Objective
-      <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a routerLink="/list-objective" (click)="w3_close()" class="w3-bar-item w3-button">List Objective</a></li>
-      <li><a routerLink="/add-objective" (click)="w3_close()" class="w3-bar-item w3-button">New Objective</a></li>
-    </ul>
-  </div>
-  <div class="dropdown" style="width:20%;min-width:83px">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Skill
-      <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <a routerLink="/list-skill" (click)="w3_close()" class="w3-bar-item w3-button">List Skill</a>
-      <a routerLink="/add-skill" (click)="w3_close()" class="w3-bar-item w3-button">New Skill</a>
-    </ul>
-  </div>
-  <div class="dropdown" style="width:20%;min-width:83px">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Learning LearningActivity
-      <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a routerLink="/list-activity" (click)="w3_close()" class="w3-bar-item w3-button">List Learning Activity</a></li>
-      <li><a routerLink="/add-activity" (click)="w3_close()" class="w3-bar-item w3-button">New Learning LearningActivity</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="sidebar" *ngIf="isAuthorized">
+  <ul>
+    <li>
+      <a routerLink="/list-syllabus"><i class="fa fa-leanpub"></i><span>Syllabus</span></a>
+    </li>
+    <li><a routerLink="/list-objective"><i class="fa fa-server"></i><span>Objective</span></a></li>
+    <li><a routerLink="/list-skill"><i class="fa fa-line-chart"></i><span>Skill</span></a></li>
+    <li><a routerLink="/list-activity"><i class="fas fa-graduation-cap"></i><span>Learning Activity</span></a></li>
+    <li><a (click)="logout()"><i class="fa fa-sign-out"></i><span>Log Out</span></a></li>
+  </ul>
+</div>
+
+<script>
+  $('#menu-action').click(function() {
+    $('.sidebar').toggleClass('active');
+    $('.main').toggleClass('active');
+    $(this).toggleClass('active');
+    if ($('.sidebar').hasClass('active')) {
+      $(this).find('i').addClass('fa-close');
+      $(this).find('i').removeClass('fa-bars');
+    } else {
+      $(this).find('i').addClass('fa-bars');
+      $(this).find('i').removeClass('fa-close');
+    }
+  });
+</script>

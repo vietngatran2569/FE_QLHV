@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
@@ -40,12 +40,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  w3_open() {
-    document.getElementById('mySidebar').style.display = 'block';
-  }
-
-  w3_close() {
-    document.getElementById('mySidebar').style.display = 'none';
+  goHome(){
+    this.router.navigateByUrl('/list-syllabus');
   }
 
 }

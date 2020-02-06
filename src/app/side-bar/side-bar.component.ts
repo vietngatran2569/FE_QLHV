@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TokenStorageService} from '../auth/token-storage.service';
+import {SyllabusService} from '../services/syllabus/syllabus.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,16 +8,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-
-  constructor() { }
+  info: any;
+  public roles: string[];
+  public isAuthorized = false;
+  public isLoggedIn = false;
+  constructor(private token: TokenStorageService,
+  ) {
+  }
 
   ngOnInit() {
+    // console.log(this.syllabusList);
+    if (this.token.getToken()) {
+      this.roles = this.token.getAuthorities();
+      this.checkAuthorization();
+    }
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+  }
+  private checkAuthorization() {
+    this.roles.every(role => {
+      if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
+        this.isLoggedIn = true;
+        this.isAuthorized = true;
+        return false;
+      } else if (role === 'ROLE_USER') {
+        this.isLoggedIn = true;
+        this.isAuthorized = false;
+        // return false;
+      }
+      return true;
+    });
   }
 
-  w3_close() {
-    document.getElementById('mySidebar').style.display = 'none';
+  logout() {
+    this.token.signOut();
+    window.location.reload();
   }
-
 }
 
 
