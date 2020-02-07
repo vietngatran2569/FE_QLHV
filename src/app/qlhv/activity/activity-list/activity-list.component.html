@@ -3,8 +3,8 @@
     <table class="table table-striped custab">
       <thead>
       <tr>
-        <th>List Learning LearningActivity</th>
-        <th class="text-center">Operation</th>
+        <td><h4>List Learning LearningActivity</h4></td>
+        <th class="text-center" *ngIf="isAuthorized">Operation</th>
       </tr>
       </thead>
       <tr *ngFor="let activiti of activity ">
@@ -12,7 +12,7 @@
 <!--          [<span>{{getActivityName(activiti.activity)}}</span>] -->
           {{activiti.name}}
         </td>
-        <td class="text-center">
+        <td class="text-center" *ngIf="isAuthorized">
           <a class="btn btn-light" (click)="goToEdit(activiti)">Edit<em class="fa fa-pencil"></em></a>
           <button class="btn btn-danger" (click)="submitDeleteActivity(activiti.id)">Delete<em
             class="fa fa-trash"></em></button>

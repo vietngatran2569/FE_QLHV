@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {LearningActivity} from '../../../interface/learningActivity';
 import {ActivityService} from '../../../services/activity/activity.service';
 import {Activity} from "../../../interface/activity";
+import {TokenStorageService} from "../../../auth/token-storage.service";
 
 @Component({
   selector: 'app-activity-list',
@@ -12,8 +13,12 @@ import {Activity} from "../../../interface/activity";
 export class ActivityListComponent implements OnInit {
 
   activity: LearningActivity[] = [];
+  public isAuthorized = false;
+  public roles: string[];
 
-  constructor(private activityService: ActivityService, private router: Router) {
+  constructor(private activityService: ActivityService,
+              private router: Router,
+              private token: TokenStorageService) {
   }
 
   ngOnInit() {
@@ -23,6 +28,10 @@ export class ActivityListComponent implements OnInit {
     }, error => {
       console.log('error');
     });
+    if (this.token.getToken()) {
+      this.roles = this.token.getAuthorities();
+      this.checkAuthorization();
+    }
   }
 
   submitDeleteActivity(id: number) {
@@ -47,6 +56,19 @@ export class ActivityListComponent implements OnInit {
 
   getActivityName(activity: Activity){
     return activity.name;
+  }
+
+  private checkAuthorization() {
+    this.roles.every(role => {
+      if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
+        this.isAuthorized = true;
+        return false;
+      } else if (role === 'ROLE_USER') {
+        this.isAuthorized = false;
+        // return false;
+      }
+      return true;
+    });
   }
 
 }

@@ -5,15 +5,15 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>List Objective</th>
-        <th>Operator</th>
+        <td><h4>List Objective</h4></td>
+        <td *ngIf="isAuthorized">Operator</td>
       </tr>
       </thead>
       <tr *ngFor="let objective of objectives ">
         <td><a (click)="getSKills(objective.id)">{{objective.name}}</a></td>
 <!--        <td>{{objective.syllabus_id}}</td>-->
-        <td class="text-center">
-          <a class="btn btn-light" (click)="goToEdit(objective)">Edit<em class="fa fa-pencil"></em></a>
+        <td class="text-center" *ngIf="isAuthorized">
+          <a class="btn btn-info" (click)="goToEdit(objective)">Edit<em class="fa fa-pencil"></em></a>
           <button class="btn btn-danger" (click)="submitDeleteObjective(objective.id)">Delete<em
             class="fa fa-trash"></em></button>
         </td>

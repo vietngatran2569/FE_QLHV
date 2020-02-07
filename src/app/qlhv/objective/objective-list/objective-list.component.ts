@@ -17,6 +17,7 @@ export class ObjectiveListComponent implements OnInit {
 
   public roles: string[];
   public authority: string;
+  public isAuthorized = false;
 
   constructor(private objectiveService: ObjectiveService,
               private router: Router,
@@ -38,9 +39,11 @@ export class ObjectiveListComponent implements OnInit {
       this.roles.every(role => {
         if (role === 'ROLE_ADMIN') {
           this.authority = 'admin';
+          this.isAuthorized = true;
           return false;
         } else if (role === 'ROLE_PM') {
           this.authority = 'pm';
+          this.isAuthorized = true;
           return false;
         }
         this.authority = 'user';
