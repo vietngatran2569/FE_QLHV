@@ -71,4 +71,7 @@ export class ActivityListComponent implements OnInit {
     });
   }
 
+  getCreateLeaningActivityForm() {
+    this.router.navigateByUrl('/add-activity');
+  }
 }

@@ -24,6 +24,7 @@ export class ObjectiveEditComponent implements OnInit {
   ngOnInit() {
     this.objective = this.objectiveService.getData();
     this.objectiveForm = new FormGroup({
+      id: new FormControl(this.objective.id),
       name: new FormControl(this.objective.name, [Validators.required]),
     });
   }

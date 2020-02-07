@@ -56,6 +56,7 @@ export class ObjectiveListComponent implements OnInit {
     if (confirm('Bạn thực sự muốn xóa') === true) {
       this.deleteCategory(id);
     }
+    window.location.reload();
   }
 
   deleteCategory(id: number) {

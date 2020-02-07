@@ -9,7 +9,9 @@
 <!--    <button (click)="deleteProduct()" class="btn btn-secondary" *ngIf="authority === 'pm' ">Delete</button>-->
 <!--  </div>-->
 <!--</div>-->
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container">
   <img [src]="syllabus.image" height="194" width="259" class="image"/>
   <div class="row">
@@ -27,8 +29,8 @@
   </div>
   <div class="row" *ngIf="isAuthorized">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a (click)="editProduct()" class="btn btn-primary">Edit</a>
+    <a (click)="editProduct()" class="btn btn-primary glyphicon glyphicon-edit">Edit</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a (click)="deleteProduct()" class="btn btn-danger">Delete</a>
+    <a (click)="deleteProduct()" class="btn btn-danger glyphicon glyphicon-remove">Delete</a>
   </div>
 </div>
