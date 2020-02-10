@@ -1,8 +1,11 @@
 <button type="button" class="btn btn-info" (click)="getCreateForm()" *ngIf="isAuthorized">Create new Syllabus</button><br><br>
-<div class="row">
-  <div class="col-3 syllabus" *ngFor="let item of syllabusList">
-    <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>
-  </div>
+<!--<div class="row">-->
+<!--  <div class="col-3 syllabus" *ngFor="let item of syllabusList">-->
+<!--    <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="w3-row-padding w3-padding-16 w3-center" *ngFor="let item of syllabusList">
+  <app-syllabus [syllabus]="item" (delete)="updateList()" (edit)="goToEdit(item)"></app-syllabus>
 </div>
 <div class="row">
   <div class="col-12">

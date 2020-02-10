@@ -12,25 +12,54 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div class="container">
-  <img [src]="syllabus.image" height="194" width="259" class="image"/>
+<!--<div class="container">-->
+<!--  <img [src]="syllabus.image" height="194" width="259" class="image"/>-->
+<!--  <div class="row">-->
+<!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <h3>{{syllabus.name}}</h3>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <p>{{syllabus.description}}</p>-->
+<!--  </div>-->
+<!--  <div class="middle">-->
+<!--&lt;!&ndash;    <div class="text">&ndash;&gt;-->
+<!--      <a id="btn-effect" (click)="getObjectives(syllabus.id)"><span>View</span></a>-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </div>-->
+<!--  <div class="row" *ngIf="isAuthorized">-->
+<!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <a (click)="editProduct()" class="btn btn-primary glyphicon glyphicon-edit">Edit</a>-->
+<!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <a (click)="deleteProduct()" class="btn btn-danger glyphicon glyphicon-remove">Delete</a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="w3-quarter container">
   <div class="row">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <h3>{{syllabus.name}}</h3>
-  </div>
-  <div class="row">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <p>{{syllabus.description}}</p>
-  </div>
-  <div class="middle">
-<!--    <div class="text">-->
-      <a id="btn-effect" (click)="getObjectives(syllabus.id)"><span>View</span></a>
-<!--    </div>-->
-  </div>
-  <div class="row" *ngIf="isAuthorized">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a (click)="editProduct()" class="btn btn-primary glyphicon glyphicon-edit">Edit</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a (click)="deleteProduct()" class="btn btn-danger glyphicon glyphicon-remove">Delete</a>
+    <div class="col-4">
+      <img [src]="syllabus.image" alt="" height="194" width="300" class="image"/>
+      <div class="middle">
+        <a id="btn-effect" (click)="getObjectives(syllabus.id)"><span>View</span></a>
+      </div>
+    </div>
+    <div class="col-5">
+      <h3>{{syllabus.name}}</h3>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p>{{syllabus.description}}</p>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row" *ngIf="isAuthorized" style="margin-top: 25%">
+        <div>
+          <a (click)="editProduct()" class="btn glyphicon glyphicon-edit" style="fill: white; border: 1px solid gray">Edit</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+          <a (click)="deleteProduct()" class="btn btn-danger glyphicon glyphicon-remove">Delete</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
